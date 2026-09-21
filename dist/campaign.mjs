@@ -1,0 +1,1022 @@
+export const campaign=[
+  {
+    "n": 3,
+    "orbs": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "targets": [
+      0
+    ],
+    "name": "First spark",
+    "hint": "Tap to burst the amber targets.",
+    "par": 2,
+    "budget": 4,
+    "solution": [
+      0,
+      0
+    ],
+    "challenge": false,
+    "campaign": true,
+    "pads": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "intro": {
+      "id": "orbs",
+      "title": "How to play",
+      "body": "Tap to burst the amber targets."
+    },
+    "difficulty": "CHAIN BASICS"
+  },
+  {
+    "n": 3,
+    "orbs": [
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "targets": [
+      0,
+      1
+    ],
+    "name": "A head start",
+    "hint": "Tap to burst the amber targets.",
+    "par": 1,
+    "budget": 3,
+    "solution": [
+      0
+    ],
+    "challenge": false,
+    "campaign": true,
+    "pads": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "intro": {
+      "id": "primed",
+      "title": "Some tiles are already charged",
+      "body": "Lit sockets are stored orbs. A nearly full tile can set off its neighbours. Look for a small tap with a big result."
+    },
+    "difficulty": "CHAIN BASICS"
+  },
+  {
+    "n": 3,
+    "orbs": [
+      0,
+      2,
+      1,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "targets": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "name": "Set it in motion",
+    "hint": "Tap to burst the amber targets.",
+    "par": 2,
+    "budget": 4,
+    "solution": [
+      0,
+      0
+    ],
+    "challenge": false,
+    "campaign": true,
+    "pads": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "difficulty": "CHAIN BASICS"
+  },
+  {
+    "n": 4,
+    "orbs": [
+      1,
+      2,
+      2,
+      1,
+      0,
+      1,
+      1,
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "targets": [
+      0,
+      3
+    ],
+    "name": "Room to ripple",
+    "hint": "Tap to burst the amber targets.",
+    "par": 1,
+    "budget": 3,
+    "solution": [
+      0
+    ],
+    "challenge": false,
+    "campaign": true,
+    "pads": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "difficulty": "CHAIN BASICS"
+  },
+  {
+    "n": 4,
+    "orbs": [
+      1,
+      2,
+      2,
+      1,
+      2,
+      3,
+      2,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "targets": [
+      0,
+      3,
+      5,
+      7
+    ],
+    "name": "Follow the relays",
+    "hint": "Tap bright outlines. Burst every target.",
+    "par": 1,
+    "budget": 3,
+    "solution": [
+      1
+    ],
+    "pads": [
+      1,
+      4,
+      6,
+      10
+    ],
+    "challenge": true,
+    "campaign": true,
+    "intro": {
+      "id": "relays",
+      "title": "Follow the bright outlines",
+      "body": "Bright outlines accept taps. Dim tiles only receive orbs from their neighbours."
+    },
+    "difficulty": "RELAYS"
+  },
+  {
+    "n": 4,
+    "orbs": [
+      1,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "targets": [
+      0,
+      3,
+      5,
+      7
+    ],
+    "name": "Make the connection",
+    "hint": "Tap bright outlines. Burst every target.",
+    "par": 2,
+    "budget": 4,
+    "solution": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      4,
+      6,
+      10
+    ],
+    "challenge": true,
+    "campaign": true,
+    "difficulty": "RELAYS"
+  },
+  {
+    "n": 4,
+    "orbs": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "targets": [
+      0,
+      3,
+      5,
+      7
+    ],
+    "name": "Charge the junction",
+    "hint": "Tap bright outlines. Burst every target.",
+    "par": 3,
+    "budget": 5,
+    "solution": [
+      1,
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      4,
+      6,
+      10
+    ],
+    "challenge": true,
+    "campaign": true,
+    "difficulty": "RELAYS"
+  },
+  {
+    "n": 5,
+    "orbs": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      3,
+      3,
+      0,
+      2,
+      2,
+      3,
+      2,
+      2,
+      0,
+      1,
+      3,
+      2,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    "targets": [
+      13,
+      14,
+      18,
+      11,
+      10,
+      16
+    ],
+    "name": "Two routes",
+    "hint": "Tap bright outlines. Burst every target.",
+    "seed": 13,
+    "generatorVersion": 2,
+    "budget": 5,
+    "indirectSolution": [
+      17,
+      17,
+      6
+    ],
+    "difficulty": "RELAYS",
+    "relief": false,
+    "par": 3,
+    "solution": [
+      17,
+      17,
+      6
+    ],
+    "openingRatio": 0.36,
+    "solutionCount": 36,
+    "quality": {
+      "longest": 8,
+      "quiet": 0,
+      "greedyTaps": 4,
+      "attempt": 306
+    },
+    "pads": [
+      17,
+      6,
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "challenge": true,
+    "campaign": true
+  },
+  {
+    "n": 5,
+    "orbs": [
+      1,
+      2,
+      2,
+      1,
+      1,
+      0,
+      3,
+      3,
+      2,
+      2,
+      0,
+      0,
+      3,
+      2,
+      2,
+      0,
+      0,
+      0,
+      3,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "targets": [
+      1,
+      12,
+      18
+    ],
+    "name": "A second spark",
+    "hint": "Tap bright outlines. Burst every target.",
+    "seed": 17,
+    "generatorVersion": 2,
+    "budget": 4,
+    "indirectSolution": [
+      8,
+      14
+    ],
+    "difficulty": "SHIELDS",
+    "relief": true,
+    "par": 2,
+    "solution": [
+      8,
+      8
+    ],
+    "openingRatio": 0.6,
+    "solutionCount": 73,
+    "quality": {
+      "longest": 24,
+      "quiet": 1,
+      "greedyTaps": 2,
+      "attempt": 4
+    },
+    "pads": [
+      8,
+      14,
+      0,
+      2,
+      3,
+      4
+    ],
+    "required": {
+      "1": 2
+    },
+    "challenge": true,
+    "campaign": true,
+    "intro": {
+      "id": "shields",
+      "title": "Break both shield layers",
+      "body": "A target marked 2 must burst twice to clear. The number drops to 1 after its first burst. Both bursts can happen in one cascade."
+    }
+  },
+  {
+    "n": 5,
+    "orbs": [
+      0,
+      2,
+      2,
+      1,
+      1,
+      0,
+      3,
+      3,
+      2,
+      2,
+      0,
+      0,
+      3,
+      2,
+      2,
+      0,
+      0,
+      0,
+      3,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "targets": [
+      1,
+      12,
+      18
+    ],
+    "name": "Carry the charge",
+    "hint": "Tap bright outlines. Burst every target.",
+    "seed": 17,
+    "generatorVersion": 2,
+    "budget": 5,
+    "indirectSolution": [
+      8,
+      14
+    ],
+    "difficulty": "SHIELDS",
+    "relief": true,
+    "par": 3,
+    "solution": [
+      8,
+      8,
+      0
+    ],
+    "openingRatio": 0.6,
+    "solutionCount": 73,
+    "quality": {
+      "longest": 24,
+      "quiet": 1,
+      "greedyTaps": 2,
+      "attempt": 4
+    },
+    "pads": [
+      8,
+      14,
+      0,
+      2,
+      3,
+      4
+    ],
+    "required": {
+      "1": 2
+    },
+    "challenge": true,
+    "campaign": true
+  },
+  {
+    "n": 6,
+    "name": "The bigger picture",
+    "hint": "Tap bright outlines. Burst every target.",
+    "orbs": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      1,
+      1,
+      2,
+      1,
+      1,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      3,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      4,
+      7,
+      16,
+      19,
+      28,
+      31,
+      35
+    ],
+    "targets": [
+      1,
+      30,
+      2,
+      34
+    ],
+    "required": {
+      "1": 1,
+      "2": 1,
+      "30": 1,
+      "34": 1
+    },
+    "budget": 6,
+    "difficulty": "RELAYS",
+    "challenge": true,
+    "par": 4,
+    "solution": [
+      0,
+      0,
+      19,
+      35
+    ],
+    "campaign": true
+  },
+  {
+    "n": 6,
+    "name": "One shield, two paths",
+    "hint": "Tap bright outlines. Burst every target.",
+    "orbs": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      3,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      4,
+      7,
+      16,
+      19,
+      28,
+      31,
+      35
+    ],
+    "targets": [
+      1,
+      30,
+      2,
+      34
+    ],
+    "required": {
+      "1": 2,
+      "2": 1,
+      "30": 1,
+      "34": 1
+    },
+    "budget": 7,
+    "difficulty": "SHIELDS",
+    "challenge": true,
+    "par": 5,
+    "solution": [
+      0,
+      0,
+      7,
+      19,
+      35
+    ],
+    "campaign": true
+  },
+  {
+    "n": 6,
+    "name": "Crossfire",
+    "hint": "Tap bright outlines. Burst every target.",
+    "orbs": [
+      1,
+      2,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      3,
+      2,
+      3,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "pads": [
+      5,
+      29,
+      10,
+      27,
+      8,
+      25,
+      6,
+      30
+    ],
+    "targets": [
+      11,
+      0,
+      17,
+      24
+    ],
+    "required": {
+      "0": 1,
+      "11": 2,
+      "17": 1,
+      "24": 1
+    },
+    "budget": 7,
+    "difficulty": "SHIELDS",
+    "challenge": true,
+    "par": 5,
+    "solution": [
+      5,
+      5,
+      5,
+      8,
+      30
+    ],
+    "campaign": true
+  },
+  {
+    "n": 6,
+    "name": "Build the momentum",
+    "hint": "Tap bright outlines. Burst every target.",
+    "orbs": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      4,
+      7,
+      16,
+      19,
+      28,
+      31,
+      35
+    ],
+    "targets": [
+      1,
+      30,
+      2,
+      34
+    ],
+    "required": {
+      "1": 2,
+      "2": 1,
+      "30": 1,
+      "34": 1
+    },
+    "budget": 8,
+    "difficulty": "SHIELDS",
+    "challenge": true,
+    "par": 6,
+    "solution": [
+      0,
+      0,
+      7,
+      35,
+      35,
+      35
+    ],
+    "campaign": true
+  },
+  {
+    "n": 6,
+    "name": "Double ignition",
+    "hint": "Tap bright outlines. Burst every target.",
+    "orbs": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      4,
+      7,
+      16,
+      19,
+      28,
+      31,
+      35
+    ],
+    "targets": [
+      1,
+      30,
+      2,
+      34
+    ],
+    "required": {
+      "1": 2,
+      "2": 1,
+      "30": 2,
+      "34": 1
+    },
+    "budget": 8,
+    "difficulty": "SHIELDS",
+    "challenge": true,
+    "par": 6,
+    "solution": [
+      0,
+      0,
+      7,
+      19,
+      19,
+      35
+    ],
+    "campaign": true,
+    "intro": {
+      "id": "finale",
+      "title": "Bring it all together",
+      "body": "Two shielded targets, two ordinary targets, and eight charging pads. You have learned every rule. Take your time and follow the connections."
+    }
+  },
+  {
+    "n": 6,
+    "name": "Silent ignition",
+    "hint": "Tap bright outlines. Burst every target.",
+    "orbs": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      3,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      4,
+      7,
+      16,
+      19,
+      28,
+      31,
+      35
+    ],
+    "targets": [
+      1,
+      30,
+      2,
+      34
+    ],
+    "required": {
+      "1": 2,
+      "2": 1,
+      "30": 2,
+      "34": 1
+    },
+    "budget": 8,
+    "difficulty": "SHIELDS",
+    "challenge": true,
+    "par": 6,
+    "solution": [
+      0,
+      0,
+      7,
+      19,
+      19,
+      35
+    ],
+    "planning": true,
+    "campaign": true,
+    "intro": {
+      "id": "planning",
+      "title": "Plan first. Ignite last.",
+      "body": "Place all eight taps before anything bursts. Your final tap ignites the whole board. Undo lets you revise your plan before that last tap. Powers are optional."
+    }
+  }
+];

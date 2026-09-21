@@ -1,0 +1,20 @@
+import {levels as old} from './dist/levels.mjs';import {challenge} from './dist/challenge.mjs';import {bank} from './dist/level-bank.mjs';import {solveChallenge} from './dist/challenge-model.mjs';import {bound,resolve} from './dist/engine.mjs';import fs from 'node:fs';
+const copy=x=>structuredClone(x),out=[];
+function add(l,name,intro){l=copy(l);l.name=name;l.challenge=!!l.pads;l.campaign=true;if(!l.pads)l.pads=Array.from({length:l.n*l.n},(_,i)=>i);const max=Math.min(6,bound(l.n)-l.orbs.reduce((a,b)=>a+b,0)-3);const s=solveChallenge(l,max);if(!s)throw Error('Unsolved '+name);l.par=s.par;l.solution=s.solution;l.budget=s.par+2;l.intro=intro;l.hint=l.challenge?'Tap bright outlines. Burst every target.':'Tap to burst the amber targets.';l.difficulty=l.required&&Object.values(l.required).includes(2)?'SHIELDS':l.challenge?'RELAYS':'CHAIN BASICS';delete l.nodes;out.push(l);console.log(out.length,name,l.n,s.par)}
+add(old[0],'First spark',{id:'orbs',title:'How to play',body:'Tap to burst the amber targets.'});
+add(old[2],'A head start',{id:'primed',title:'Some tiles are already charged',body:'Lit sockets are stored orbs. A nearly full tile can set off its neighbours. Look for a small tap with a big result.'});
+let l=copy(old[3]);l.orbs[0]=0;add(l,'Set it in motion');
+add(old[4],'Room to ripple');
+l=copy(old[5]);l.pads=[1,4,6,10];add(l,'Follow the relays',{id:'relays',title:'Follow the bright outlines',body:'Bright outlines accept taps. Dim tiles only receive orbs from their neighbours.'});
+l.orbs[1]--;l.orbs[5]--;add(l,'Make the connection');
+l.orbs[4]--;add(l,'Charge the junction');
+l=copy(bank.find(l=>l.n===5&&l.par===3));l.pads=[...new Set(l.indirectSolution)];for(let i=0;i<l.n*l.n&&l.pads.length<7;i++)if(!l.targets.includes(i)&&!l.pads.includes(i))l.pads.push(i);add(l,'Two routes');
+let shield=copy(bank.find(x=>x.n===5&&x.relief));shield.pads=[...new Set(shield.indirectSolution)];let state=shield.orbs,hits=Array(25).fill(0);for(const t of shield.indirectSolution){const r=resolve(5,state,t);state=r.board;hits=hits.map((v,i)=>v+r.odometer[i]);}const shieldCell=hits.findIndex((v,i)=>v>=2&&!shield.pads.includes(i));shield.targets=[shieldCell,...shield.targets.filter(i=>i!==shieldCell).slice(0,2)];shield.required={[shieldCell]:2};for(let i=0;i<25&&shield.pads.length<6;i++)if(!shield.targets.includes(i)&&!shield.pads.includes(i))shield.pads.push(i);add(shield,'A second spark',{id:'shields',title:'Break both shield layers',body:'A target marked 2 must burst twice to clear. The number drops to 1 after its first burst. Both bursts can happen in one cascade.'});
+for(let i=0;i<25;i++){if(!shield.orbs[i]||shield.targets.includes(i))continue;const test=copy(shield);test.orbs[i]--;const sol=solveChallenge(test,3);if(sol?.par===3){shield=test;break}}add(shield,'Carry the charge');
+l=copy(challenge);l.required=Object.fromEntries(l.targets.map(i=>[i,1]));l.orbs[7]++;l.orbs[19]++;add(l,'The bigger picture');
+l.required[1]=2;l.orbs[7]--;add(l,'One shield, two paths');
+let rot=copy(l);const map=i=>(i%6)*6+5-Math.floor(i/6);rot.orbs=Array(36).fill(0);l.orbs.forEach((v,i)=>rot.orbs[map(i)]=v);rot.targets=l.targets.map(map);rot.pads=l.pads.map(map);rot.required=Object.fromEntries(Object.entries(l.required).map(([i,v])=>[map(+i),v]));rot.orbs[map(7)]++;rot.orbs[map(13)]--;add(rot,'Crossfire');
+l=copy(challenge);l.required[30]=1;l.orbs[7]--;add(l,'Build the momentum');
+add(challenge,'Double ignition',{id:'finale',title:'Bring it all together',body:'Two shielded targets, two ordinary targets, and eight charging pads. You have learned every rule. Take your time and follow the connections.'});
+add({...challenge,planning:true},'Silent ignition',{id:'planning',title:'Plan first. Ignite last.',body:'Place all eight taps before anything bursts. Your final tap ignites the whole board. Undo lets you revise your plan before that last tap. Powers are optional.'});
+fs.writeFileSync('dist/campaign.mjs','export const campaign='+JSON.stringify(out,null,2)+';\n');
