@@ -43,3 +43,9 @@ node check-tutorials.mjs
 Simulation is separate from animation. Generated remixes retain verified solutions and tap budgets; orb bounds and a wave cap protect cascade termination. Human difficulty and animation feel still benefit from device playtesting.
 
 Progress is saved per browser and domain. A new hosting domain starts a separate save.
+
+## First-move tutorial
+
+Level 1 has three primed targets. Tapping any target clears them with a five-to-seven-burst chain; the suggested corner gives seven bursts over six waves. A gentle arrow appears after four idle seconds on the untouched first board, starting after the introduction closes. It is suppressed while paused, hidden, or in a menu, and permanently dismissed after the first move. Later tile introductions remain in place.
+
+For the browser regression check, install Playwright and its Chromium browser, then run `node check-onboarding.mjs`. The check starts its own static server and covers hint timing, pause, navigation, replay, undo, saved state, reduced motion, and the first-level result. `BROWSER_EXECUTABLE` can select an existing Chromium executable.

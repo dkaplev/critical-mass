@@ -2,25 +2,26 @@ export const campaign=[
   {
     "n": 3,
     "orbs": [
+      1,
+      1,
       0,
+      2,
+      3,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      1,
       0,
       0
     ],
     "targets": [
-      0
+      0,
+      4,
+      6
     ],
     "name": "First spark",
     "hint": "Tap to burst the amber targets.",
-    "par": 2,
-    "budget": 4,
+    "par": 1,
+    "budget": 3,
     "solution": [
-      0,
       0
     ],
     "challenge": false,
@@ -41,7 +42,9 @@ export const campaign=[
       "title": "How to play",
       "body": "Tap to burst the amber targets."
     },
-    "difficulty": "CHAIN BASICS"
+    "difficulty": "CHAIN BASICS",
+    "hintTap": 0,
+    "opening": true
   },
   {
     "n": 3,
