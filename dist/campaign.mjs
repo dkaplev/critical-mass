@@ -2,65 +2,22 @@ export const campaign=[
   {
     "n": 3,
     "orbs": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "targets": [
-      0
-    ],
-    "name": "First spark",
-    "hint": "Tap to burst the amber targets.",
-    "par": 2,
-    "budget": 4,
-    "solution": [
-      0,
-      0
-    ],
-    "challenge": false,
-    "campaign": true,
-    "pads": [
-      0,
       1,
+      1,
+      0,
       2,
       3,
-      4,
-      5,
-      6,
-      7,
-      8
-    ],
-    "intro": {
-      "id": "orbs",
-      "title": "How to play",
-      "body": "Tap to burst the amber targets."
-    },
-    "difficulty": "CHAIN BASICS"
-  },
-  {
-    "n": 3,
-    "orbs": [
+      0,
       1,
-      2,
-      0,
-      0,
-      0,
-      0,
-      0,
       0,
       0
     ],
     "targets": [
       0,
-      1
+      4,
+      6
     ],
-    "name": "A head start",
+    "name": "First spark",
     "hint": "Tap to burst the amber targets.",
     "par": 1,
     "budget": 3,
@@ -81,11 +38,60 @@ export const campaign=[
       8
     ],
     "intro": {
+      "id": "orbs",
+      "title": "How to play",
+      "body": "Tap to burst the amber targets."
+    },
+    "difficulty": "CHAIN BASICS",
+    "hintTap": 0,
+    "opening": true
+  },
+  {
+    "n": 3,
+    "orbs": [
+      0,
+      0,
+      1,
+      0,
+      3,
+      2,
+      0,
+      1,
+      0
+    ],
+    "targets": [
+      8,
+      4,
+      2
+    ],
+    "name": "Build the spark",
+    "hint": "Charge the bottom-right target. Then tap it again.",
+    "par": 2,
+    "budget": 4,
+    "solution": [
+      8,
+      8
+    ],
+    "challenge": false,
+    "campaign": true,
+    "pads": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "intro": {
       "id": "primed",
       "title": "Some tiles are already charged",
       "body": "Lit sockets are stored orbs. A nearly full tile can set off its neighbours. Look for a small tap with a big result."
     },
-    "difficulty": "CHAIN BASICS"
+    "difficulty": "CHAIN BASICS",
+    "setupLesson": true
   },
   {
     "n": 3,
