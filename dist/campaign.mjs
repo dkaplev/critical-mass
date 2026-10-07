@@ -49,26 +49,28 @@ export const campaign=[
   {
     "n": 3,
     "orbs": [
+      0,
+      0,
       1,
+      0,
+      3,
       2,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      1,
       0
     ],
     "targets": [
-      0,
-      1
+      8,
+      4,
+      2
     ],
-    "name": "A head start",
-    "hint": "Tap to burst the amber targets.",
-    "par": 1,
-    "budget": 3,
+    "name": "Build the spark",
+    "hint": "Charge the bottom-right target. Then tap it again.",
+    "par": 2,
+    "budget": 4,
     "solution": [
-      0
+      8,
+      8
     ],
     "challenge": false,
     "campaign": true,
@@ -88,7 +90,8 @@ export const campaign=[
       "title": "Some tiles are already charged",
       "body": "Lit sockets are stored orbs. A nearly full tile can set off its neighbours. Look for a small tap with a big result."
     },
-    "difficulty": "CHAIN BASICS"
+    "difficulty": "CHAIN BASICS",
+    "setupLesson": true
   },
   {
     "n": 3,

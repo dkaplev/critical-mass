@@ -26,6 +26,8 @@ try{
  assert.equal(await page.locator('#modal h2').textContent(),'How to play');
  await page.clock.runFor(5000);assert.equal(await hinted(),0,'No hint while intro is open');
  await page.locator('#introPlay').click();assert.equal(await page.locator('#modal').evaluate(e=>e.open),false,'Only one opening popup');
+ assert.equal(await page.locator('.power-tray').isVisible(),false,'Powers hidden on opening level');
+ assert.equal(await page.locator('#board [data-i="0"]').evaluate(e=>getComputedStyle(e,'::after').animationName),'ready-breathe');
  await page.clock.runFor(3999);assert.equal(await hinted(),0);
  await page.clock.runFor(1);assert.equal(await hinted(),1,'Hint appears at four seconds');
  assert.equal(await page.locator('.first-tap-hint').getAttribute('data-i'),'0');
@@ -42,6 +44,22 @@ try{
  await page.locator('#board [data-i="8"]').click();await page.clock.runFor(500);await page.locator('#undo').click();await page.clock.runFor(5000);assert.equal(await hinted(),0,'Undo does not revive hint');
  await page.reload({waitUntil:'domcontentloaded'});await page.locator('#board .cell').first().waitFor();await page.clock.runFor(5000);assert.equal(await hinted(),0,'First tap acknowledgement survives reload');
  await page.locator('#progress [data-level="1"]').click();assert.equal(await page.locator('#modal h2').textContent(),'Ready to burst');await page.locator('#introPlay').click();await page.clock.runFor(5000);assert.equal(await hinted(),0,'No hint on later levels');
+ await page.locator('#board [data-i="8"]').click();await page.clock.runFor(500);
+ assert.equal(await page.locator('#best').textContent(),'00','Preparation tap does not burst');
+ assert.equal(await page.locator('#instruction').textContent(),'Orb added. Fill its sockets to burst.');
+ assert(await page.locator('#board [data-i="8"]').evaluate(e=>e.classList.contains('ready-cue')));
+ await page.locator('#board [data-i="8"]').click();await page.clock.runFor(4000);
+ assert.deepEqual(await page.locator('.result-stats strong').allTextContents(),['2','2','7']);
+ await page.locator('#retry').click();
+ for(let i=0;i<4;i++){await page.locator('#board [data-i="0"]').click();await page.clock.runFor(1200)}
+ assert.equal(await page.locator('#modal h2').textContent(),'One more try?');
+ assert.equal(await page.locator('#rescue').count(),0,'Early failure cannot offer locked powers');
+ await page.locator('#retry').click();await page.locator('#progress [data-level="4"]').click();await page.locator('#introPlay').click();
+ assert.equal(await page.locator('.power-tray').isVisible(),false,'Powers hidden through level 5');
+ await page.locator('#help').click();assert.equal(await page.locator('[data-guide="powers2"]').count(),0);await page.locator('#guidePlay').click();
+ await page.locator('#progress [data-level="5"]').click();assert.equal(await page.locator('#modal h2').textContent(),'A little extra help');await page.locator('#introPlay').click();
+ assert.equal(await page.locator('.power-tray').isVisible(),true,'Powers revealed on level 6');
+ await page.locator('#nova').click();assert.equal(await page.locator('#novaCount').textContent(),'2');await page.clock.runFor(10000);
  const reducedContext=await browser.newContext({viewport:{width:320,height:740},reducedMotion:'reduce'});
  const p=await reducedContext.newPage();p.on('pageerror',e=>errors.push(e.message));
  await p.clock.install({time:new Date('2026-10-07T09:00:00Z')});await p.clock.pauseAt(new Date('2026-10-07T09:00:01Z'));
@@ -51,9 +69,10 @@ try{
  await p.locator('#progress [data-level="0"]').click();await p.clock.runFor(4000);
  assert.equal(await p.locator('.first-tap-arrow').evaluate(e=>getComputedStyle(e).animationName),'none','Reduced motion keeps arrow static');
  assert(await p.locator('.first-tap-arrow').isVisible());
+ assert.equal(await p.locator('#board [data-i="0"]').evaluate(e=>getComputedStyle(e,'::after').animationName),'none','Ready rim is static with reduced motion');
  await p.locator('#board [data-i="8"]').click();await p.clock.runFor(5000);assert.equal(await p.locator('.first-tap-hint').count(),0,'Even a quiet first tap permanently dismisses hint');
  await p.locator('#undo').click();await p.clock.runFor(5000);assert.equal(await p.locator('.first-tap-hint').count(),0);
  await reducedContext.close();
  assert.deepEqual(errors,[]);
- console.log('PASS: 7 bursts / 6 waves; one intro; exact 4s hint; pause/resume; first-tap win; replay/undo/reload suppression; level 2 guide; level-switch cancellation; reduced motion; quiet first tap; no runtime errors.');
+ console.log('PASS: 7 bursts / 6 waves; one intro; exact 4s hint; pause/resume; first-tap win; replay/undo/reload suppression; level 2 guide; level-switch cancellation; reduced motion; quiet first tap; two-tap setup lesson; powers unlock at 6; failure rescue gating; ready pulse; no runtime errors.');
 }finally{await browser.close();server.close()}
